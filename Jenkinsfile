@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning Git Repository...'
                 // Clone the repository from a Git source
-                git branch: 'main', url: 'https://github.com/your-repo/your-project.git'
+                git branch: 'main', url: 'https://github.com/Dadu777/failfastex.git'
             }
         }
 
