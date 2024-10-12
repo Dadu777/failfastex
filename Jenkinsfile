@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning Git Repository...'
                 // Clone the repository from a Git source
-                git branch: 'main', url: 'https://github.com/Dadu777/failfastex.git'
+                git branch: 'main', url: 'https://github.com/your-repo/your-project.git'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // This stage will be skipped if the Build fails due to failFast: true
+                // This stage will be skipped if the Build fails automatically
                 sh 'mvn test'
             }
         }
@@ -34,11 +34,6 @@ pipeline {
                 sh 'scp target/your-project.war user@server:/path/to/deploy/'
             }
         }
-    }
-
-    options {
-        // Stop the pipeline if any stage fails
-        failFast true
     }
 
     post {
